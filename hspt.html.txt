@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedicoCare Hospital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #009688;
+      --secondary-color: #004d40;
+      --accent-color: #80cbc4;
+      --bg-light: #f0fdfa;
+      --text-dark: #222;
+      --white: #ffffff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    header {
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 30px 20px;
+      text-align: center;
+    }
+    nav {
+      background: var(--secondary-color);
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?hospital,clinic') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px #000;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      max-width: 90%;
+        margin-bottom: 10px; 
+    }
+    p {
+      text-align: center;
+        margin-top: 0;
+    }
+    .section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      color: var(--primary-color);
+    }
+   
+
+     
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+    .service {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      font-size: 1rem;
+      font-weight: 500;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .service img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    .service-details {
+      display: none;
+      background: var(--white);
+      border-left: 4px solid var(--primary-color);
+      margin-top: 10px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .service-details.active {
+      display: block;
+    }
+    .doctors {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .doctor {
+      background: var(--white);
+      border-radius: 12px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    }
+    .doctor img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f5f5f5;
+  padding: 10px;
+}
+
+    .doctor h3 {
+      margin-top: 15px;
+      color: var(--secondary-color);
+    }
+    .appointment-btn {
+      display: inline-block;
+      margin: 40px auto 0;
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 14px 32px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .appointment-btn:hover {
+      background: var(--secondary-color);
+    }
+    footer {
+      background: var(--secondary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 50px;
+    }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MedicoCare Hospital</h1>
+    <p>Your Health, Our Priority</p>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Modern Care with a Personal Touch     
+    </h1>
+
+
+  </div>
+  <p>
+    
+    
+    At MedicoCare Hospital, we blend modern medical technology with compassionate care.<br> Our services span across critical specialties including cardiology, neurology,<br> pediatrics, dental, emergency care, and more — each led by experienced specialists and backed by<br> cutting-edge diagnostics. We are committed to patient-first healthcare, ensuring personalized <br>treatment plans, seamless coordination, and 24/7 support. From preventive check-ups to <br>complex surgeries, MedicoCare is your trusted partner in health.</p>
+  
+
+  <section class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service" onclick="toggleDetails('cardiology')">
+        <img src="cardio.png" alt="Cardiology">
+        🫀 Cardiology
+      </div>
+      <div id="cardiology" class="service-details">We provide comprehensive cardiac care including diagnostics, surgery, and rehabilitation.</div>
+
+      <div class="service" onclick="toggleDetails('neurology')">
+        <img src="neuro.png" alt="Neurology">
+        🧠 Neurology
+      </div>
+      <div id="neurology" class="service-details">Our neurology department treats disorders of the brain, spine, and nervous system.</div>
+
+      <div class="service" onclick="toggleDetails('general')">
+        <img src="medic.png" alt="General Medicine">
+        🩺 General Medicine
+      </div>
+      <div id="general" class="service-details">Diagnosis and treatment for general illnesses and long-term care.</div>
+
+      <div class="service" onclick="toggleDetails('dental')">
+        <img src="dent.png" alt="Dental Care">
+        🦷 Dental Care
+      </div>
+      <div id="dental" class="service-details">Complete dental care including cleaning, fillings, and surgery.</div>
+
+      <div class="service" onclick="toggleDetails('pathology')">
+        <img src="pathol.png" alt="Pathology">
+        🧬 Pathology
+      </div>
+      <div id="pathology" class="service-details">Lab tests and diagnostic services with accurate reporting.</div>
+
+      <div class="service" onclick="toggleDetails('ophthalmology')">
+        <img src="eye.png" alt="Ophthalmology">
+        👁️ Ophthalmology
+      </div>
+      <div id="ophthalmology" class="service-details">Eye exams, vision correction, cataract surgery, and more.</div>
+
+      <div class="service" onclick="toggleDetails('pediatrics')">
+        <img src="bab.png" alt="Pediatrics">
+        👶 Pediatrics
+      </div>
+      <div id="pediatrics" class="service-details">Healthcare for infants, children, and adolescents.</div>
+
+      <div class="service" onclick="toggleDetails('emergency')">
+        <img src="emer.png" alt="Emergency Services">
+        🩹 Emergency Services
+      </div>
+      <div id="emergency" class="service-details">24/7 emergency room with immediate response and trauma care.</div>
+
+      <div class="service" onclick="toggleDetails('physio')">
+        <img src="physio.png" alt="Physiotherapy">
+        🧘 Physiotherapy
+      </div>
+      <div id="physio" class="service-details">Rehabilitation programs for injury recovery and pain relief.</div>
+
+      <div class="service" onclick="toggleDetails('pulmonology')">
+        <img src="scan.png" alt="Pulmonology">
+        🫁 Pulmonology
+      </div>
+      <div id="pulmonology" class="service-details">Lung and respiratory care with latest treatments and support.</div>
+
+      <div class="service" onclick="toggleDetails('dermatology')">
+        <img src="skin.png" alt="Dermatology">
+        🧑‍⚕️ Dermatology
+      </div>
+      <div id="dermatology" class="service-details">Skin care, acne treatment, laser therapy, and more.</div>
+
+      <div class="service" onclick="toggleDetails('pharmacy')">
+        <img src="pharm.png" alt="Pharmacy">
+        🧴 Pharmacy Services
+      </div>
+      <div id="pharmacy" class="service-details">On-site pharmacy providing all essential medications.</div>
+    </div>
+  </section>
+
+  <section class="section" id="doctors">
+    <h2>Our Doctors</h2>
+    <div class="doctors">
+      <div class="doctor">
+        <img src="docw.png" alt="Dr. Sneha" />
+        <h3>Dr. Sneha </h3>
+        <p>Cardiologist</p>
+      </div>
+      <div class="doctor">
+        <img src="men.png" alt="Dr. Ravi" />
+        <h3>Dr. Ravi Kumar</h3>
+        <p>Neurologist</p>
+      </div>
+    </div>
+    <a class="appointment-btn" href="#">Book Appointment</a>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 MedicoCare Hospital | Contact: +91-9876543210 | Email: info@medicocare.com</p>
+  </footer>
+
+  <script>
+    function toggleDetails(id) {
+      const elem = document.getElementById(id);
+      elem.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
